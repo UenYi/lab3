@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "/home/tricia/AndroidStudioProjects/lab03-skeleton/app/build/intermediates/res/merged/debug/menu/activity_two.xml",
+        "source": "/home/tricia/AndroidStudioProjects/lab03-skeleton/app/src/main/res/menu/activity_two.xml"
+    },
+    {
+        "merged": "/home/tricia/AndroidStudioProjects/lab03-skeleton/app/build/intermediates/res/merged/debug/menu/activity_one.xml",
+        "source": "/home/tricia/AndroidStudioProjects/lab03-skeleton/app/src/main/res/menu/activity_one.xml"
+    }
+]
