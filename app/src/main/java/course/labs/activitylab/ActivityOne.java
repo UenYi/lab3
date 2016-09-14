@@ -28,20 +28,20 @@ public class ActivityOne extends Activity {
 		setContentView(R.layout.activity_one);
 
 		prefs = getPreferences(MODE_PRIVATE);
-		createCtr = prefs.getInt("createCount",0);
-		startCtr = prefs.getInt("startCount",0);
-		resumeCtr = prefs.getInt("resumeCount",0);
-		pauseCtr = prefs.getInt("pauseCount",0);
-		stopCtr = prefs.getInt("pauseCount",0);
-		destroyCtr = prefs.getInt("destroyCount",0);
-		restartCtr = prefs.getInt("restartCount",0);
+		if(prefs != null) {
+			createCtr = prefs.getInt("createCount", 0);
+			startCtr = prefs.getInt("startCount", 0);
+			resumeCtr = prefs.getInt("resumeCount", 0);
+			pauseCtr = prefs.getInt("pauseCount", 0);
+			stopCtr = prefs.getInt("stopCounter", 0);
+			destroyCtr = prefs.getInt("destroyCount", 0);
+			restartCtr = prefs.getInt("restartCount", 0);
+		}
 
 		//Log cat print out
-		Log.i(TAG, "onCreate called");
+		Log.i(TAG, "onCreate called" + createCtr);
 
 		createCtr++;
-		((TextView)findViewById(R.id.create)).setText(getString(R.string.onCreate) + " " + createCtr);
-
 		((TextView)findViewById(R.id.create)).setText(getString(R.string.onCreate) + " " + createCtr);
 		((TextView)findViewById(R.id.start)).setText(getString(R.string.onStart) + " " + startCtr);
 		((TextView)findViewById(R.id.resume)).setText(getString(R.string.onResume) + " " + resumeCtr);
@@ -61,6 +61,14 @@ public class ActivityOne extends Activity {
 		stopCtr = savedInstanceSate.getInt("stopCount");
 		destroyCtr = savedInstanceSate.getInt("destroyCount");
 		restartCtr = savedInstanceSate.getInt("restartCount");
+
+		((TextView)findViewById(R.id.create)).setText(getString(R.string.onCreate) + " " + createCtr);
+		((TextView)findViewById(R.id.start)).setText(getString(R.string.onStart) + " " + startCtr);
+		((TextView)findViewById(R.id.resume)).setText(getString(R.string.onResume) + " " + resumeCtr);
+		((TextView)findViewById(R.id.pause)).setText(getString(R.string.onPause) + " " + pauseCtr);
+		((TextView)findViewById(R.id.stop)).setText(getString(R.string.onStop) + " " + stopCtr);
+		((TextView)findViewById(R.id.destroy)).setText(getString(R.string.onDestroy) + " " + destroyCtr);
+		((TextView)findViewById(R.id.restart)).setText(getString(R.string.onRestart) + " " + restartCtr);
 	}
 
 	@Override
@@ -77,7 +85,7 @@ public class ActivityOne extends Activity {
 		super.onStart();
 
 		//Log cat print out
-		Log.i(TAG, "onStart called");
+		Log.i(TAG, "onStart called" + startCtr);
 
 		startCtr++;
 		((TextView)findViewById(R.id.start)).setText(getString(R.string.onStart) + " " + startCtr);
@@ -118,7 +126,7 @@ public class ActivityOne extends Activity {
 		editor.putInt("startCount",startCtr);
 		editor.putInt("resumeCount",resumeCtr);
 		editor.putInt("pauseCount",pauseCtr);
-		editor.putInt("stopCount",startCtr);
+		editor.putInt("stopCount",stopCtr);
 		editor.putInt("destroyCount",destroyCtr);
 		editor.putInt("restartCount",restartCtr);
 
@@ -149,7 +157,7 @@ public class ActivityOne extends Activity {
 		public void onSaveInstanceState(Bundle savedInstanceState){
 			Log.i(TAG, "onSaveInstanceState called");
 			savedInstanceState.putInt("createCount",createCtr);
-			savedInstanceState.putInt("startCount", createCtr);
+			savedInstanceState.putInt("startCount", startCtr);
 			savedInstanceState.putInt("resumeCount",resumeCtr);
 			savedInstanceState.putInt("pauseCount",pauseCtr);
 			savedInstanceState.putInt("stopCount",stopCtr);
