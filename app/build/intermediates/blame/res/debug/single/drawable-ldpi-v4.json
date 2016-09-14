@@ -1,6 +1,10 @@
 [
     {
-        "merged": "/home/tricia/AndroidStudioProjects/lab03-skeleton/app/build/intermediates/res/merged/debug/drawable-ldpi-v4/ic_launcher.png",
-        "source": "/home/tricia/AndroidStudioProjects/lab03-skeleton/app/src/main/res/drawable-ldpi/ic_launcher.png"
+        "merged": "H:\\Android\\lab03-skeleton\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi-v4\\ic_launcher.png",
+        "source": "H:\\Android\\lab03-skeleton\\app\\src\\main\\res\\drawable-ldpi\\ic_launcher.png"
+    },
+    {
+        "merged": "H:\\home\\tricia\\AndroidStudioProjects\\lab03-skeleton\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi-v4\\ic_launcher.png",
+        "source": "H:\\home\\tricia\\AndroidStudioProjects\\lab03-skeleton\\app\\src\\main\\res\\drawable-ldpi\\ic_launcher.png"
     }
 ]
